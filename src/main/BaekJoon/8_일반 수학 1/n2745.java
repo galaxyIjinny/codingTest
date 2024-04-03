@@ -35,7 +35,7 @@ public class Main {
 // 17760 KB , 212 ms
 
 import java.io.IOException;
-import java.util.Scanner;
+        import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -67,6 +67,8 @@ public class Main {
 
 
 /*
+// 실행 시에는 정상 작동하지만, 문제가 원하는 방법은 아스키 코드를 이용하는 것
+// 배열을 미리 선언함으로 복잡해지고, 메모리도 잡아먹으며 출제 의도를 만족할 수 없었다.
 
 import java.io.BufferedReader;
 import java.io.IOException;

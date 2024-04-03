@@ -10,7 +10,7 @@ public class Main {
         int N = scanner.nextInt();
         int M = scanner.nextInt();
 
-        int[] array = new int[N + 1];
+        int[] array = new int[N + 1]; // 실제 바구니 갯수는 양수 개부터 셈 한다.
 
         for (int m = 0; m < M; m++) {
             int i = scanner.nextInt();
@@ -22,7 +22,7 @@ public class Main {
             }
         }
 
-        for (int a = 1; a <= N; a++) {
+        for (int a = 1; a <= N; a++) { // 실제 출력하는 것은 첫 번째 바구니 이므로 1부터 시작
             System.out.print(array[a] + " ");
         }
     }
