@@ -26,6 +26,29 @@ public class Main {
 
         bw.write(sb + "\n");
 
+/*  338280 KB , 1652 ms . Counting 정렬 방식
+
+        int N = Integer.parseInt(br.readLine());
+        int[] cnt = new int[10001];
+
+        for (int i = 0; i < N; i++) {
+            cnt[Integer.parseInt(br.readLine())]++;
+        }
+
+        br.close();
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i < 10001; i++) {
+            while (cnt[i] > 0) {
+                sb.append(i).append('\n');
+                cnt[i]--;
+            }
+        }
+
+        bw.write(sb.toString());
+        */
+
         bw.flush();
         bw.close();
     }
