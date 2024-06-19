@@ -26,6 +26,28 @@ public class Main {
             sum += o;
         }
 
+        // 배열로 직접 구현. 23728 KB , 204 ms
+        int top = -1;
+
+        int K = Integer.parseInt(br.readLine());
+        int[] arr = new int[K];
+
+        for (int i = 0; i < K; i++) {
+            int number = Integer.parseInt(br.readLine());
+
+            if (number == 0) {
+                top--;
+            } else {
+                top++;
+                arr[top] = number;
+            }
+        }
+
+        int sum = 0;
+        for (int i = 0; i <= top; i++) {
+            sum += arr[i];
+        }
+
         bw.write(sum + "\n");
 
         br.close();
