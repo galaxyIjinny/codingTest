@@ -60,3 +60,29 @@ class Solution {
                 (numbers.size() < 2 ? a * a * a + b * b * b + c * c * c : 1);
     }
 }
+
+import java.util.HashMap;
+import java.util.Map;
+
+class Solution {
+
+    public int solution(int a, int b, int c) {
+        int answer = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(a, map.getOrDefault(a, 0) + 1);
+        map.put(b, map.getOrDefault(a, 0) + 1);
+        map.put(c, map.getOrDefault(a, 0) + 1);
+
+        if (map.size() == 1) {
+            answer = (int) ((3 * a) * (3 * Math.pow(a, 2)) * (3 * Math.pow(a, 3)));
+        } else if (map.size() == 2) {
+            answer = (int) ((a + b + c) * (Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2)));
+        } else if (map.size() == 3) {
+            answer = (a + b + c);
+        }
+        return answer;
+    }
+}
+
+// 한 줄로 하는 방식
+return a == b && b == c ? (a + b + c) * (a * a + b * b + c * c) * (a * a * a + b * b * b + c * c * c) : a == b || b == c || c == a ? (a + b + c) * (a * a + b * b + c * c) : a + b + c;
