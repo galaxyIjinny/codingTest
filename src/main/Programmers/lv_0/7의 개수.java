@@ -7,6 +7,12 @@ class Solution {
             for (int j = 1; j <= i; j *= 10) {
                 if (i % (j * 10) / j == 7) count++;
             }
+            /*while (i != 0) {
+                if (a % 10 == 7) {
+                    count++;
+                }
+                a /= 10;
+            }*/
         }
 
         return count;
