@@ -23,11 +23,11 @@ class Solution {
 //
 
 import java.util.*;
-        import java.util.stream.IntStream;
+import java.util.stream.IntStream;
 
 class Solution {
     public String[] solution(String myString) {
         return IntStream.range(0, myString.length())
-                .ampToObj(myString::substring).sorted().toArray(String[]::new);
+                .mapToObj(myString::substring).sorted().toArray(String[]::new);
     }
 }
