@@ -57,3 +57,67 @@ class Solution {
         return true;
     }
 }
+
+//
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int[] arr) {
+        return Arrays.stream(arr).map(i -> cntAction(i)).max().getAsInt();
+
+        //
+        /*int count = 0;
+        while (true) {
+            int[] copied = Arrays.copyOf(arr, arr.length);
+            for (int i = 0; i < copied.length; i++) {
+                if (copied[i] >= 50 && copied[i] % 2 == 0) {
+                    copied[i] /= 2;
+                } else if (copied[i] < 50 && copied[i] % 2 == 1) {
+                    copied[i] = copied[i] * 2 + 1;
+                }
+            }
+            if (Arrays.equals(arr, copied)) {
+                return count;
+            }
+            arr = copied;
+            count++;
+        }*/
+    }
+
+    private int cntAction(int n) {
+        int cnt = 0;
+        boolean flag = true;
+
+        while (flag) { // 각 원소를 변화시키면 서 변화 없어질때까지 횟수가 가장 큰 값 찾기. 문제 역시 배열 변화 반복횟수 물어보기 때문
+            if (n % 2 == 0 && 50 <= n) {
+                n /= 2;
+                cnt++;
+            } else if (n % 2 == 1 && n < 50) {
+                n *= 2;
+                n += 1;
+                cnt++;
+            } else {
+                flag = false;
+            }
+        }
+        return cnt;
+    }
+}
+
+class Solution {
+    int[] array;
+
+    public int solution(int[] arr) {
+        int i = 0;
+        array = arr;
+        while (true) {
+            int[] newArray = Arrays.stream(array)
+                    .map(operand -> operand > 49 && operand % 2 == 0 ? operand / 2 : 50 > operand && operand % 2 == 1 ? operand * 2 + 1 : operand)
+                    .toArray();
+
+            if (Arrays.equals(array, newArray)) break;
+            ((Runnable) () -> array = newArray).run();
+            i++;
+        }
+        return i;
+    }
